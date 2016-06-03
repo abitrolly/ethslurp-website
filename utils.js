@@ -45,11 +45,6 @@ function DocMenu(sel)
 	Two("detail", "doc_dispstr_det", sel);
 }
 
-function oneDownload(file)
-{
-	document.write("<a href=data/" + file + ">" + file + "</a></li></br>");
-}
-
 function contact()
 {
 	document.write("<p>+------------------<br>")
