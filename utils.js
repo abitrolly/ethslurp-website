@@ -58,6 +58,6 @@ function contact()
 	document.write("+1 01 610 519-9413<br><br>")
 	document.write("<a target=_blank href=\"https://github.com/Great-Hill-Corporation/ethslurp\"><img src=\"images/octocat.png\"></a> ")
 	document.write("<a target=_blank href=\"https://twitter.com/Ether_Slurp\"><img src=\"images/twitter.png\"></a> ")
-	//document.write("<a target=_blank href=\"\"><img src=\"images/facebook.png\"></a> ")
+	document.write("<a target=_blank href=\"https://www.facebook.com/GreatHillCorporation/\"><img src=\"images/facebook.png\"></a> ")
 	document.write("<br><i><small><h6>icons by dave gandy or freepic at http://www.flaticon.com</h6></small></i>")
 }
