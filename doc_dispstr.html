@@ -39,11 +39,11 @@
         data in any format you wish. While it does provide
         three pre-canned formats (txt, csv, and html), the
         number of available formats is limitless. This is
-        accomplished through a feature we call 'display strings.'
+        accomplished through a feature we call 'display strings.'</p>
 
 <h3>Blockchain data fields</h3>
 
-    <p>Here's a list of all the fields in an Ethereum transaction:
+    <p>Here's a list of all the fields in an Ethereum transaction:</p>
 <pre><code>  blockHash, blockNumber, confirmations, contractAddress, cumulativeGasUsed,
   from, gas, gasPrice, gasUsed, hash, input, nonce, timeStamp, to,
   transactionIndex, value
@@ -53,12 +53,12 @@
     <p>Jumping directly to an example: the display string for
         exporting a tab seperated text file (.txt) containing
         the data fields 'timeStamp,' 'from,' and 'value' would
-        look like this:
+        look like this:</p>
 
 <pre><code> [{TIMESTAMP}]\t[{FROM}]\t[{VALUE}]\n                                       <i>~1</i> </code></pre>
 
     <p>If, instead, you wanted to include 'blocknumber,' 'to,' 'gas,' and
-        'value,' your display string would look like this:
+        'value,' your display string would look like this:</p>
 
 <pre><code> [{BLOCKNUMBER}]\t[{TO}]\t[{GASUSED}]\t[{VALUE}]\n                          <i>~2</i> </code></pre>
 
@@ -70,7 +70,7 @@
         Display string '2' behaves identically.</p>
 
     <p>If you wanted comma seperated values (.csv) so you could open the
-        export file directly in MS Excel, you would use:
+        export file directly in MS Excel, you would use:</p>
 
 <pre><code> ["{BLOCKNUMBER}"],["{TO}"],["{GASUSED}"],["{VALUE}"]\n                     <i>~3</i> </code></pre>
 
@@ -82,7 +82,7 @@
         it needs to be.</p>
 
     <p>If you wanted the resulting exported data to be a more easily understood
-        by a human being, you might use:
+        by a human being, you might use:</p>
 
 <pre><code> [{p:BLOCKNUMBER}:\t{BLOCKNUMBER}\n][{p:INPUT}:\t{INPUT}\n][{p:TO}:\t{TO}\n] <i>~4</i> </code></pre>
 
@@ -128,7 +128,7 @@ to:          0xbb9bc244d798123fde783fcc1c72d3bb8c189413</pre>
         </ul>
 
     <hr>
-    <p>Furthering the example, if the data for a transaction looked like this:
+    <p>Furthering the example, if the data for a transaction looked like this:</p>
 
 <pre><code>{
   "blockHash": "0xf61cc7b7d3ef647bcb6218a0.....a17b10364e255508",
@@ -150,7 +150,7 @@ to:          0xbb9bc244d798123fde783fcc1c72d3bb8c189413</pre>
 }</code></pre>
 
     <p>(notice that it is not very easy to read), then the above display strings
-        would render as follows (spaces below are tabs):
+        would render as follows (spaces below are tabs):</p>
 
 <pre><code> [{TIMESTAMP}]\t[{FROM}]\t[{VALUE}]\n                                       <i>~1</i>
 
@@ -171,13 +171,13 @@ to:          0xbb9bc244d798123fde783fcc1c72d3bb8c189413</pre>
    To:              0xbb9bc244d798123...</font></code></pre>
 
    <p>Note that the display string applies to each record separately. Our
-        <a href=video.html>video</a> explains it better.
+        <a href=video.html>video</a> explains it better.</p>
 
 <h3>What can you do with display strings?</h3>
 
     <p>We hear non-stop talk about the immortal, immutable, infinitely
         accessible, shared accounting ledger known as the Ethereum blockchain.
-        "It will make all of our lives easier," they all say.
+        "It will make all of our lives easier," they all say.</p>
 
     <p>Until now, gaining access to this data has been anything but easy. We should
         know. We created EthSlurp in direct response to the great difficulty

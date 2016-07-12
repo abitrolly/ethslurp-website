@@ -39,20 +39,20 @@
         line interface. Other features, which do not fit nicely onto
         a command line, are accessible through a configuration file
         which is documented here. The file is called ethslurp.conf
-        and is stored in EthSlurp's cache folder.
+        and is stored in EthSlurp's cache folder.</p>
 
 <h3>EthSlurp's cache folder and the config file</h3>
 
     <p>Each time the program slurps blockchain data, it stores that
         data in an internal binary format in a folder under the end user's
         $HOME folder called ~/.ethslurp/slurps. The program stores its
-        configuration file (ethslurp.conf) in the parent of that folder.
+        configuration file (ethslurp.conf) in the parent of that folder.</p>
 
     <p>Configuration items appear on a single line (or, if more than one
         line, the line ends with the continuation mark '\'). Additionally,
         configuration items are stored under an appropriate group header.
         The group header stands on its own line and is surrounded by
-        square brackets, thus:
+        square brackets, thus:</p>
 
 <pre><code> #--------------------------------------------------------------
  # Sample contents of ethslurp.conf (lines starting with # are comments)
@@ -66,7 +66,7 @@
  other_item=Another item
 </code></pre>
 
-        <p>Individual configuration items along with their default values are detailed below.
+        <p>Individual configuration items along with their default values are detailed below.</p>
 
 <h3>Configuration items</h3>
         <p><h6>[SETTINGS] datapath=$HOME/.ethslurp</h6>:
@@ -97,7 +97,7 @@
         unlimted range in how your export data is formatted. Mostly as a way
         of example, there are nine pre-set display strings provided. Using the -f
         command line option, you may provide your own customized strings as well.
-        The possibilities are almost endless. Here are the nine pre-set strings:
+        The possibilities are almost endless. Here are the nine pre-set strings:</p>
 
         <ul><i>Tab delimited text (.txt):</i><br />
             <h6>[DISPLAY_STR] fmt_txt_file=[{HEADER}]\n[{RECORDS}]\n</h6><br>
@@ -114,7 +114,7 @@
             <h6>[DISPLAY_STR] fmt_html_record=\t&lt;tr&gt;\n[{FIELDS}]&lt;/tr&gt;\n</h6><br>
             <h6>[DISPLAY_STR] fmt_html_field=\t\t&lt;td&gt;[{FIELD}]&lt;/td&gt;\n</h6><br></ul>
 
-        <p><a href=doc_dispstr.html>Click here</a> for a complete description of this very powerful feature.
+        <p><a href=doc_dispstr.html>Click here</a> for a complete description of this very powerful feature.</p>
         </div>
       </section>
     </div>

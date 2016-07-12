@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>EthSlurp - Drink the Blockchain</title>
+    <script src=utils.js></script>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>EthSlurp</h1>
+        <h2>Drink the blockchain</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/Great-Hill-Corporation/ethslurp/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/Great-Hill-Corporation/ethslurp/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/Great-Hill-Corporation/ethslurp" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+      <div class="container">
+        <script>Menu("Config");</script><br><script>DocMenu("abis");</script>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+
+<h3>Application Binary Interface (ABI) Files</h3>
+
+    <p>The first time you slurp an Ethereum address you may simply tell
+        it an address. If, however, you additionally provide an ABI (Application
+        Binary Interface) file, EthSlurp can do so much more. We won't explain
+        what an ABI is (Google it), but it's worth learning if you don't know.</p>
+
+<h3>Parsing the Ethereum Input Data Field</h3>
+
+    <p>Ethereum transactions are very like Bitcoin transactions, in the sense that they
+        include at least three fields: <b>from_account</b>, <b>to_account</b>, and <b>transaction_amount</b>.
+        This makes perfect sense. How else would one transfer money between accounts. Of course, there are
+        <a href="doc_dispstr.html">other data fields</a>, but one in particular is of
+        interest to us. That fields is called <b>input</b>.</p>
+
+        <p>Bitcoin has an <b>input</b> field, but it has at most 80 bytes of storage. This is
+        one of the important differences between Bitcoin and Ethereum. Ethereum's <b>input</b> field
+        can be of any length. Why is this important? Becuase the <b>input</b> field is how
+        Ethereum passes along its function calls.</p>
+
+    <p>This is the contents of a typical Ethereum data field:</p>
+
+    <pre><code>    0xc9d27afe
+    00000000000000000000000000000000000000000000000000000000000000ff
+    0000000000000000000000000000000000000000000000000000000000000001</code></pre>
+
+    <p>Computer gobbeldy-gook again. Using the information we find in the contract's
+        ABI, EthSlurp is able to convert this string into this function call:</p>
+
+    <pre><code>    vote(255,”Yea”)</code></pre>
+
+    <p>Which, because this is The DAO's transaction represents a user voting on one of the
+        proposals. Another transaction:</p>
+
+        <pre><code>    0x23b872dd
+    000000000000000000000000bf6cc4a882ace8e3a19bb8f5372280b33b2f6c9e
+    000000000000000000000000fbb1b73c4f0bda4f67dca266ce6ef42f520fbb98
+    0000000000000000000000000000000000000000000000056bc75e2d63100000</code></pre>
+
+        <p>might transalte to this:</p>
+
+        <pre><code>    transferFrom(0xbf6cc4a882ace8e3a19bb8f5372280b33b2f6c9e,
+                 0xfbb1b73c4f0bda4f67dca266ce6ef42f520fbb98,
+                 -1)</code></pre>
+
+        <p>which, in the case of The DAO, means move all DAO tokens in the first account to the
+            second account (-1 is the largest possible unsigned integer: 2<sup>256-1</sup>,
+            in effect this means move 'all' the ether).</p>
+
+<h3>And This Matters Why?</h3>
+
+        <p>We beleive that EthSlurp is the only currently available software
+            that displays the Ethereum function calls for a known contract in
+            a human readable way. This allows us to seperate transactions based on
+            function signature as we've done <a href="http://daodeepdive.com/data.html">here</a>.
+            It also allows us to "see activity on contracts that would be very
+            difficult to see otherwise> Recently, the WhiteHat DAO curators added their
+            own address to the DarkDAO's whitelist. We saw this activity a full twelve
+            hours before it was announced as is
+            <a href="https://twitter.com/ethslurp/status/752954842528743424">demonstrated here</a>.</p>
+
+        <p>Stay tuned. There's more to come.</p>
+        </div>
+      </section>
+    </div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-2416364-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
